@@ -1,0 +1,51 @@
+.cont{
+    min-height: calc(100vh - 34px);
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+form{
+    background-color: var(--tetriary-color);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+form label,form input,form h3,form select{
+    margin-bottom: 5px;
+    color:var(--secondary-color);
+}
+form option{
+    color:var(--secondary-color);
+}
+input{
+    padding: 5px;
+}
+form .date{
+    display: flex;
+    flex-direction: column;
+}
+form .date_data_DoB,form .date_data_DoD{
+    display: flex;
+    justify-content: space-between;
+}
+.date_data_DoB  input,.date_data_DoD  input{
+    width: 100px;
+}
+.submit{
+    display: block;
+    font-size: 20px;
+    background-color:var(--main-color);
+    color:var(--tetriary-color) !important;
+    padding: 5px;
+    border:none;
+    margin-top: 10px;
+    width: 150px;
+}
+.valid{  
+    border: 2px solid green;
+}
+.invalid{  
+    border: 2px solid red;
+}

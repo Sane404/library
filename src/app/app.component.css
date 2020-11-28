@@ -1,0 +1,26 @@
+.link_wrap{
+    display: flex;
+    justify-content: flex-end;
+}
+.active-link{
+    background-color: var(--secondary-color);
+}
+.nav_wrap{
+    z-index: 10;
+    display: flex;
+    background-color: var(--main-color);
+}
+.nav_wrap nav{
+    width: 1200px;
+    margin: 0 auto;
+}
+.nav_wrap a{
+    /* text-transform: uppercase; */
+    text-decoration:none;
+    margin: 0 5px;
+    padding: 5px;
+    font-size: 20px;
+}
+.nav_wrap a:last-child{
+    margin-right: 0;
+}

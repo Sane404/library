@@ -1,0 +1,106 @@
+<div class="cont">
+    <div class="author_wrap">
+        <div class="author_books_wrapper">
+        <div class="author_card">
+            <img src="{{currentAuthorData.AuthorImg}}">
+            <p class="author_name">{{currentAuthorData.AuthorName}}</p>
+            <small class="author_date">{{currentAuthorData.AuthorDoB}} - {{currentAuthorData.AuthorDoD}}</small>
+            <button (click)='removeAuthor()' class="remove_Author">Remove Author</button>
+            <button (click)='showEditForm($event)' class="edit_Author">Edit Author Info</button>
+        </div>
+        <div class="books_wrap">
+            <h2>Books</h2>
+            <p *ngIf='currentAuthorData.books.length === 0'>Consider adding some books to this author</p>
+            <div class="book" *ngFor='let item of currentAuthorData.books'>
+                <div class="book_and_genre">
+                    
+                    <h3>{{item.book_title}}</h3>
+                    <i>{{item.book_genre}}</i>
+                </div>
+                <div class="buttons_wrap">
+                    <button class="remove_Book" (click)='removeBook($event)'>Remove the Book</button>
+                <button class="edit_Book" (click)='showEditBookForm($event)'>Edit Book</button>
+                </div>
+                
+            </div>
+            <hr>
+            <button class="add_Book" (click)='showAddBookForm($event)'>Add Book</button>
+        </div>
+        </div>
+        <div class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem iusto officia itaque qui incidunt sequi voluptatibus. Perspiciatis nihil ad provident ullam reiciendis vero, recusandae dolor fugiat ab voluptates, quis aperiam maxime numquam nostrum! Repellat sapiente blanditiis pariatur magnam voluptas neque deleniti laboriosam voluptatem quis iusto sit perferendis optio quidem sequi id qui, sint impedit facilis numquam eius architecto nobis aliquam! Eaque eum sunt, impedit quis non voluptatum nihil cum possimus facere asperiores reiciendis eligendi hic sed error esse voluptates magnam? Obcaecati vel praesentium tempora similique asperiores minima dolorem architecto eveniet nisi et amet mollitia nesciunt dolor, consequuntur ut cupiditate adipisci.
+        </div>
+    </div>
+<div class="form_wrap" *ngIf='showForm' (click)='showEditForm($event)'>
+    <form [formGroup]="edit_authorForm" (ngSubmit)="onSubmit()" class="edit_form">
+        <div class="form_header">
+            <h2>Edit Author</h2>
+            <p class="form_close" (click)='showEditForm($event)'>&#10006;</p>
+        </div>
+        <label for="fullname">Full name</label>
+        <input type="text" id='fullname' placeholder="Example:Arthur Conan Doyle" formControlName="fullName" />
+        <div class="date">
+            <h3>Date of Birth</h3>
+            <div class="date_data_DoB">
+                <div class="date_data_day">
+                    <input type="number" id="DoB_day" placeholder="Day" formControlName="day">
+                </div>
+                <select name="month" id="month" formControlName="month">
+                    <option value="Select Month" selected disabled>Select Month</option>
+                    <option *ngFor='let month of months' value="{{month}}">{{month}}</option>
+                </select>
+                <div class="date_data_year">
+                    <input type="number" id="DoB_year" placeholder="Year" formControlName="year"></div>
+            </div>
+            <h3>Date of Death</h3>
+            <div class="date_alive">
+                <label for="alive">Author is alive</label>
+                <input type="checkbox" id="alive" formControlName='alive' (click)='authorAlive($event)'>
+            </div>
+
+            <div class="date_data_DoD" *ngIf="!isAlive">
+                <div class="date_data_day">
+                    <input type="number" id="DoD_day" placeholder="Day" formControlName="day_D">
+                </div>
+
+                <select name="month" id="month" formControlName="month_D">
+                    <option value="Select Month" selected disabled>Select Month</option>
+                    <option *ngFor='let month of months' value="{{month}}">{{month}}</option>
+                </select>
+                <div class="date_data_year">
+                    <input type="number" id="DoD_year" placeholder="Year" formControlName="year_D"></div>
+            </div>
+
+        </div>
+        <label for="img_url">Image URL</label>
+        <input type="text" id="img_url" formControlName="url">
+        <input type="submit" value="Confirm" class="submit" />
+    </form>
+</div>
+<div class="addBook" *ngIf='AddBookForm' (click)='showAddBookForm($event)'>
+    <form [formGroup]="add_Book" (ngSubmit)="addBook()" class="add_book_form">
+        <div class="form_header">
+            <h2>Add new book</h2>
+            <p class="add_book_close" (click)='showAddBookForm($event)'>&#10006;</p>
+        </div>
+        <label for="book_title">Book Title</label>
+        <input type="text" id="book_title" formControlName="booktitle">
+        <label for="book_genre">Genre</label>
+        <input type="text" id="book_genre" formControlName="bookgenre">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div class="editBook" *ngIf='editBookForm' (click)='showEditBookForm($event)'>
+    <form [formGroup]="edit_Book" (ngSubmit)="editBook()" class="edit_book_form">
+        <div class="form_header">
+            <h2>Edit book</h2>
+            <p class="edit_book_close" (click)='showEditBookForm($event)'>&#10006;</p>
+        </div>
+        <label for="book_title">Book Title</label>
+        <input type="text" id="book_title" formControlName="booktitle">
+        <label for="book_genre">Genre</label>
+        <input type="text" id="book_genre" formControlName="bookgenre">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</div>

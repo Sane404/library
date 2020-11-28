@@ -1,0 +1,25 @@
+.cont{
+    min-height: calc(100vh - 34px);
+    background-color: var(--secondary-color);
+    padding-top: 20px;
+}
+.all_books_library{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+}
+.book_library{
+    border: 2px solid var(--tetriary-color);
+    
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 400px;
+}
+@media(max-width:900px){
+    .book_library{width: 300px;}
+}
+@media(max-width:678px){
+    .book_library{width: 100%;}
+}

@@ -1,0 +1,197 @@
+.cont{
+    
+    min-height: calc(100vh - 34px);
+    background-color: var(--secondary-color);
+    padding-bottom: 20px;
+}
+button{
+    background-color: var(--tetriary-color);
+    color:var(--secondary-color);
+    border: none;
+    padding: 10px !important;
+    cursor: pointer;
+}
+hr{
+    margin: 5px 0;
+}
+.author_wrap{
+    padding: 10px;
+    padding-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+.author_card{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.author_card img{
+    width: 100%;
+    max-height: 400px;
+}
+.author_name{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+}
+.author_date{
+    text-align: center;
+    font-style: italic;
+    font-size: 18;
+}
+.remove_Author,.edit_Author{
+    padding: 5px;
+    margin-top: 5px;
+}
+.books_wrap{
+    margin-left: 10px;
+}
+.books_wrap h2{
+    text-align: center;
+    margin: 10px 0;
+}
+.book{
+    display: flex;
+    justify-content: space-between;
+}
+
+.book_and_genre{
+    display: flex;
+    flex-direction: column;
+}
+.book_and_genre h3{
+    padding: 5px;
+    margin: 0;
+}
+.book_and_genre i{
+    padding: 0 5px;
+}
+.remove_Book,.edit_Book{
+    align-self: center;
+    margin-left: 10px;
+    
+    padding: 5px;
+}
+.remove_Book{
+    width: 140px;
+}
+.edit_Book{
+    width: 90px;
+}
+.add_Book{
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+form{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+input{
+    padding: 5px;
+    border: 1px solid rgb(177, 177, 177);
+}
+form .date{
+    display: flex;
+    flex-direction: column;
+}
+form .date_data_DoB,form .date_data_DoD{
+    display: flex;
+    justify-content: space-between;
+}
+.submit{
+    background-color:var(--main-color);
+    color:var(--tetriary-color);
+    border:none;
+    margin-top: 10px;
+    width: 150px;
+}
+.form_wrap,.addBook,.editBook{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    bottom: 0;
+    width: 100vw;
+    /* min-height:100vh; */
+    background-color: rgba(128, 128, 128, 0.5);
+}
+.addBook button,.editBook button{
+    background-color: var(--main-color);
+    color:var(--tetriary-color);
+    width: 30%;
+    margin-top: 5px;
+}
+.edit_form,.addBook form,.editBook form{
+    background-color:var(--tetriary-color);
+    
+    padding: 10px;
+}
+.edit_form  input,.addBook form input,.editBook form input{
+    color:var(--secondary-color);
+    margin: 5px 0;
+}
+.edit_form  label,.edit_form option, .edit_form select,.addBook form label,.editBook form label{
+    color:var(--secondary-color);
+}
+.form_header{
+    display: flex;
+    justify-content: space-between;
+}
+.form_header h2, .form_header p{
+    margin: 0 0 10px 0;
+    color:var(--secondary-color);
+}
+.form_close,.add_book_close,.edit_book_close{
+    font-size: 20px;
+    cursor: pointer;
+}
+.ng-invalid:not(form){
+    border-left: 4px solid red;
+}
+.ng-valid:not(form){
+    border-left: 4px solid forestgreen;
+}
+.author_books_wrapper{
+    display: flex;
+    /* justify-content: space-between; */
+}
+.description{
+    margin-top: 20px;
+}
+.buttons_wrap{
+    display: flex;
+    align-items: center;
+}
+@media(max-width:750px){
+    .author_card{
+        margin: 0 auto;
+    }
+    .author_books_wrapper{
+        flex-direction: column;
+    }
+}
+@media(max-width:600px){
+    .book{
+        flex-direction: column;
+        padding: 10px;
+        border:2px solid var(--tetriary-color);
+        margin-bottom: 10px;
+    }
+    .buttons_wrap{
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    .remove_Book{
+        margin-left: 0;
+    }
+    .add_Book{
+        margin-left: 0;
+    }
+}

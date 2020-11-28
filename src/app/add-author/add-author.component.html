@@ -1,0 +1,42 @@
+<div class="cont">
+<form [formGroup]="authorForm" (ngSubmit)="onSubmit()">
+    <label for="fullname">Full name</label>
+    <input  #fullname type="text" id='fullname' placeholder="Arthur Conan Doyle" formControlName="fullName" [ngClass]="{'valid': name.valid && name.touched,'invalid': name.invalid && name.touched}" />
+    <div class="date">
+        <h3>Date of Birth</h3>
+        <div class="date_data_DoB">
+            <div class="date_data_day">
+                <input #dayDoB type="number" id="DoB_day" placeholder="Day" formControlName="day" [ngClass]="{'valid': day.valid && day.touched,'invalid': day.invalid && day.touched}">
+            </div>
+            <select  #monthDoB name="month" id="month" formControlName="month" [ngClass]="{'valid': month.valid && month.touched,'invalid': month.invalid && month.touched}">
+                <option value="Select Month" selected disabled>Select Month</option>
+                <option *ngFor='let month of months' value="{{month}}">{{month}}</option>
+            </select>
+            <div class="date_data_year">
+                <input #yearDoB type="number" id="DoB_year" placeholder="Year" formControlName="year"[ngClass]="{'valid': year.valid && year.touched,'invalid': year.invalid && year.touched}"></div>
+        </div>
+        <h3>Date of Death</h3>
+        <div class="date_alive">
+            <label for="alive">Author is alive</label>
+            <input #alive type="checkbox" id="alive" formControlName='alive'>
+        </div>
+        
+        <div class="date_data_DoD" *ngIf="!isAlive">
+            <div class="date_data_day">
+                <input  #dayDoD type="number" id="DoD_day" placeholder="Day" formControlName="day_D" [ngClass]="{'valid': dayD.valid && dayD.touched,'invalid': dayD.invalid && dayD.touched}">
+            </div>
+
+            <select  #monthDoD name="month" id="month" formControlName="month_D" [ngClass]="{'valid': monthD.valid && monthD.touched,'invalid': monthD.invalid && monthD.touched}">
+                <option value="Select Month" selected disabled>Select Month</option>
+                <option *ngFor='let month of months' value="{{month}}">{{month}}</option>
+            </select>
+            <div class="date_data_year">
+                <input #yearDoD type="number" id="DoD_year" placeholder="Year" formControlName="year_D" [ngClass]="{'valid': yearD.valid && yearD.touched,'invalid': yearD.invalid && yearD.touched}"></div>
+        </div>
+
+    </div>
+    <label for="img_url">Image URL</label>
+    <input #url  type="text" id="img_url" placeholder='.jpg only'formControlName="url" [ngClass]="{'valid': url.valid && url.touched,'invalid': url.invalid && url.touched}">
+    <input type="submit" value="Add author" class="submit" />
+</form>
+</div>

@@ -1,0 +1,20 @@
+<div class="cont">
+    <h2>Authors</h2>
+
+<div class="all_authors">
+    <div class="author_card" *ngFor='let item of authorsArray; let id = index'>
+        <img  src ='{{item.AuthorImg}}'/>
+        <div class="author_info">
+            <b>{{item.AuthorName}}</b>
+        <small>{{item.AuthorDoB}} - {{item.AuthorDoD}}</small>
+        <a [routerLink]="['/author', id + 1]" class='author_link'>More</a>
+        </div>
+        
+    </div>
+    
+</div>
+
+</div>
+<footer>
+    Images courtesy of <a href="https://www.wikipedia.org">Wikipedia.org</a> &copy;
+</footer>

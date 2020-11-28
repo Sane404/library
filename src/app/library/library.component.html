@@ -1,0 +1,9 @@
+<div class="cont">
+    <div class="all_books_library">
+        <div class="book_library" *ngFor = 'let item of all_books'>
+            <p>{{item.book_title}}</p>
+            <p>{{item.book_genre}}</p>
+            <a href="author/{{item.bookAuthorID}}">{{item.bookAuthorName}}</a>
+        </div>
+    </div>
+</div>

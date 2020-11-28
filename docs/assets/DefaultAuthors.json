@@ -1,0 +1,22 @@
+[   
+    {   "AuthorName" : "Arthur Conan Doyle",
+        "AuthorDoB" : "22 May 1859",
+        "AuthorDoD" : "7 July 1930",
+        "AuthorImg" : "https://upload.wikimedia.org/wikipedia/commons/b/bb/Conan_doyle.jpg",   
+        "books": [{"book_title": "The Adventures of Sherlock Holmes", "book_genre" : "Detective" },
+                  {"book_title": "The Hound of the Baskervilles", "book_genre" : "Detective" },
+                  {"book_title": "A Study in Scarlet", "book_genre" : "Detective" }  
+        ]
+    },
+    {   
+        "AuthorName" : "Howard Phillips Lovecraft",
+        "AuthorDoB" : "August 20 1890",
+        "AuthorDoD" : "March 15 1937 ",
+        "AuthorImg" : "https://upload.wikimedia.org/wikipedia/commons/1/10/H._P._Lovecraft%2C_June_1934.jpg",
+        "books": [{"book_title": "The Call of Cthulhu", "book_genre" : "Horror fiction" },
+                  {"book_title": "At the Mountains of Madness", "book_genre" : "Horror fiction" },
+                  {"book_title": "The Dunwich Horror", "book_genre" : "Thriller" },
+                  {"book_title": "The Shadow Out of Time", "book_genre" : "Science Fiction" }  
+        ]
+    }
+]
